@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Random Numbers</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+
+    // Welcome Alert
+    alert("welcome to our game!!")
+    // Game Variables
+    var wins = 0
+    var losses = 0
+    var ties = 0
+    // Loop Variables
+    var choices = ["r", "p", "s"]
+    // Loop 10 times 
+    for (var i = 0; i < 10; i++) {
+      // Choose random whole numbers from choices variable within the choices variable length 
+      computerInput = choices[Math.floor(Math.random() * choices.length)];
+      // Ask what they chose
+      var userInput = prompt("Rock, paper or scissors?! (Type r,p or s)");
+      console.log(computerInput);
+      console.log(userChoice);
+      // Make sure that even with caps and spaces it will make sense
+      var userChoice = userInput.toLowerCase().trim();
+      // Tells user what they chose/computer chose 
+      alert("you chose " + userChoice + " computer chose " + computerInput);
+
+      // GAME LOGIC
+
+      // Check for ties and alert user of tie
+      if (computerInput === userChoice) {
+        // Check for ties and alert user of ties
+        alert("Wow! a tie!");
+      }
+
+      else if (userChoice === "p" && computerInput === "s" ||
+        userChoice === "s" && computerInput === "r" ||
+        userChoice === "r" && computerInput === "p") {
+        // Check for losses and alert player of loss
+        alert("You lost!");
+        // Add a point 
+        losses++;
+      }
+
+      else {
+        alert("Good for you! You won!");
+        // Adds points 
+        wins++;
+      }
+
+    }
+    alert("FINAL RESULTS! " + "\nWins: " + wins + "\nLosses: " + losses + "\nTies: " + ties)
+  </script>
+</body>
+
+</html>
